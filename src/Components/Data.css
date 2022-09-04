@@ -10,6 +10,27 @@ h2{
     font-size: 35px;
     color: rgb(5, 38, 122);
 }
+
+form{
+    text-align: center;
+ }
+ label{
+     font-weight: 600;
+     font-size: 22px;
+ }
+ input{
+     padding: 12px 20px;
+     margin: 20px;
+     border: 2px solid rgb(65, 64, 64);
+     border-radius: 15px;
+ }
+ input[type="submit"]{
+     background-color: rgb(71, 242, 234);
+     width: 150px;
+     border-radius: 22px;
+     font-size: 19px;  
+ }
+ 
 .outerbox{
     border: 2px solid black;
     margin: 30px 60px;
