@@ -4,7 +4,7 @@ import './Data.css'
 const FeedbackData = () => {
 
   const [input, setData] = useState({name:"",department:"",rating:"",})
-  const[arrofobj,setArrofobj] =useState([])
+  const[obj,setObj] =useState([])
   const[hidden,setHidden] =useState(0)
 
   const [counter,setCounter] = useState(0);
@@ -16,7 +16,7 @@ const FeedbackData = () => {
     e.preventDefault();
     setCounter(counter+1)
     const arr={...input,id:counter}
-    setArrofobj([...arrofobj,arr])
+    setObj([...obj,arr])
     setData({name:"",department:"",rating:"",})
     
     setHidden(!hidden)
@@ -48,7 +48,7 @@ const FeedbackData = () => {
       <div style={{'display':hidden===true ? 'unset':'none'}} >
         <h2>employee feedback data</h2>
           <div className='outerbox'>
-            {arrofobj.map((item)=>{
+            {obj.map((item)=>{
                 return <div className='databox'>Name : {item.name } | Department : {item.department} | Rating : {item.rating}</div>
             })}
           </div>
