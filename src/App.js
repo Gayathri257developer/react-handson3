@@ -9,7 +9,8 @@ class App extends React.Component {
       name: '',
       depart: '',
       rating:'',
-      users:[]
+      users:[],
+      isFeedbackData: false
     }
   }
 
@@ -31,7 +32,7 @@ class App extends React.Component {
 
    updatedUsers.push({name:this.state.name, depart:this.state.depart, rating:this.state.rating})
     this.setState({users:updatedUsers, name:'', depart:'', rating:'' })
-  
+  this.setState({visibledata: this.state.isFeedbackData === true})
   }
 
     render() {
@@ -48,8 +49,13 @@ class App extends React.Component {
       </div>  
       
 
-    <FeedbackData name={this.state.name} depart={this.state.depart} rating={this.state.rating} users={this.state.users} 
-    updateName={this.updateName} updateDepartment={this.updateDepartment} updateRating={this.updateRating}/> 
+     {this.state.visibledata === false ?
+          <FeedbackData name={this.state.name} depart={this.state.depart} rating={this.state.rating} users={this.state.users} 
+        updateName={this.updateName} updateDepartment={this.updateDepartment} updateRating={this.updateRating}/> 
+        
+        : null
+        }
+        
       </>
     
     )
